@@ -42,7 +42,12 @@ namespace strip_ui
 			updateRgb();
 		}
 		void updateRgb() {
-			int [,] v = new int[,] {{rSlider.Value, gSlider.Value, bSlider.Value}};
+			int [,] v = new int[Program.strip.getSize(), 3];
+			for (int i = 0; i < v.GetLength(0); i++) {
+				v[i,0] = rSlider.Value;
+				v[i,1] = gSlider.Value;
+				v[i,2] = bSlider.Value;
+			}
 			Program.strip.sendInt(v);
 		}
 		void MainFormFormClosed(object sender, FormClosedEventArgs e)

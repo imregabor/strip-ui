@@ -106,6 +106,10 @@ namespace strip_ui
 			return p;
 		}
 		
+		public int getSize() {
+			return this.ledcount;
+		}
+		
 		/// <summary>
 		/// Probe a given serial port to read strip info.
 		/// </summary>
